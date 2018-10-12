@@ -11,7 +11,8 @@ For simplicity sake, all columns (except "age") are considered as "string".
 variable without reloading page.
 • If more than 100 different values, one can indicate number of non-displayed values.
 • Indicate number of non-displayed lines (i.e. lines corresponding to non-displayed values)
-Database
+
+#### Database
 • Type: MySQL
 • Host: birdie-test.cyosireearno.eu-west-2.rds.amazonaws.com
 • Port: 3306
@@ -19,9 +20,10 @@ Database
 • Password: xnxPp6QfZbCYkY8
 • Name: birdietest
 • Table: census_learn_sql
+
 Stack: NodeJS + React/Redux
 
-What we want to see
+#### What we want to see
 • React with concise Redux base state management
 • Use of front end middleware to handle side effects/asynchronous processes (Sagas/Epics)
 • Well defined and reusable components
