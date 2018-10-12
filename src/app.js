@@ -1,16 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import axios from 'axios';
 
 import './scss/style.scss';
 
 class App extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      data: {}
+    };
   }
 
-  componentWillMount() {
-
+  componentDidMount() {
+    axios.get('http://localhost:4000');
 
   }
 
@@ -19,7 +22,7 @@ class App extends React.Component {
       <main>
         <section>
           <h1>Tech test</h1>
-        </section>  
+        </section>
       </main>
 
 
