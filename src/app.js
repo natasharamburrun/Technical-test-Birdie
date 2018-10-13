@@ -9,28 +9,36 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      birdietest: []
+      demographicData: [],
+      data: []
     };
   }
+
+  handleSelectOptionsFilter = (e) => {
+    if(e.target.value) this.setState({ optionFilter: e.target.value });
+    else this.setState({ optionFilter: false });
+  }
+
 
   componentDidMount() {
     axios.get('http://localhost:4000')
       .then(res => {
-        this.setState({ birdietest: res.data});
-        console.log(res.data);
+        this.setState({ demographicData: res.data});
+        // .catch(err => console.log(err));
+        // console.log(res.data);
       });
   }
 
-  // renderBirdietest = ({ })
-
   render() {
-    // const { birdietest } =this.state;
-    // console.log(this.state.data);
+    console.log(this.state);
     return (
       <main>
         <section>
-          {/* { birdietest.map(this.renderBirdietest)} */}
-          <h1>Tech test</h1>
+          <div className="columns is-multiline">
+            {this.state.data.demographicData && this.state.data.demographicData.map(data =>
+              <h2 key={data.i}>{data.employee}</h2>
+            )}
+          </div>
         </section>
       </main>
     );
