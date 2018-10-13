@@ -8,25 +8,31 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      data: {}
+      birdietest: []
     };
   }
 
   componentDidMount() {
-    axios.get('http://localhost:4000');
-
+    axios.get('http://localhost:4000')
+      .then(res => {
+        this.setState({ birdietest: res.data});
+        // .catch(err => console.log(err));
+        console.log(res.data);
+      });
   }
 
+  // renderBirdietest = ({ })
+
   render() {
+    // const { birdietest } =this.state;
+    // console.log(this.state.data);
     return (
       <main>
         <section>
+          {/* { birdietest.map(this.renderBirdietest)} */}
           <h1>Tech test</h1>
         </section>
       </main>
-
-
-
     );
   }
 }

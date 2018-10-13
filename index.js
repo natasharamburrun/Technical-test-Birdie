@@ -21,12 +21,12 @@ connection.connect(err => {
 
 app.get('/', (req, res) => {
   // res.send('hello from server');
-  connection.query('SELECT * FROM census_learn_sql', (err, rows) => {
+  connection.query('SELECT * FROM census_learn_sql', (err, results) => {
     if(err) {
       return res.send(err);
     } else {
       return res.json({
-        data: rows
+        data: results
       });
     }
   });
