@@ -4,6 +4,7 @@ const app = express();
 const port = 4000;
 
 app.use(cors());
+//cross origin resource sharing - this allow AJAX to access resource from remote host
 
 
 const mysql = require('mysql');
@@ -33,12 +34,6 @@ app.get('/', (req, res) => {
 });
 
 // connection.end();
-
-// app.use(express.static(`${__dirname}/public`));
-//
-// app.use('/api', routes);
-//
-// app.get('/*', (req, res) => res.sendFile(`${__dirname}/public/index.html`));
 
 app.listen(port, () => console.log(`Express running on port ${port}`));
 

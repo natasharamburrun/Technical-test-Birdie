@@ -36,3 +36,27 @@ Stack: NodeJS + React/Redux
 • Strong overall naming conventions
 
 Share code on GitHub or Bitbucket and share application URL.
+
+#### Task approach
+
+##### Filter (dropdown box):
+education
+sex
+own Business or Self Employed
+marital status
+citizenship
+birth country
+
+##### Count:
+ie education * "x" = "y"
+
+##### Age Average:
+(Find the mean - calculate the sum and divide by how many there are)
+ie reduce /.length
+
+##### other
+Sort in decreasing order (b, a)
+only first 100 values =>100
+if more then 100 indicate number of non displayed values
+indicate number of non displayed lines
+Should not reload page

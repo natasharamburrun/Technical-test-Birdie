@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 
 import './scss/style.scss';
+import 'bulma';
 
 class App extends React.Component {
   constructor() {
@@ -16,7 +17,6 @@ class App extends React.Component {
     axios.get('http://localhost:4000')
       .then(res => {
         this.setState({ birdietest: res.data});
-        // .catch(err => console.log(err));
         console.log(res.data);
       });
   }
