@@ -60,3 +60,8 @@ only first 100 values =>100
 if more then 100 indicate number of non displayed values
 indicate number of non displayed lines
 Should not reload page
+
+
+
+##### Challenges
+- The time it take for the data to load due to the size 

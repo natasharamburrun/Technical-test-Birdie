@@ -9,8 +9,8 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      demographicData: [],
-      data: []
+      data: [],
+      demographicData: []
     };
   }
 
@@ -19,26 +19,51 @@ class App extends React.Component {
     else this.setState({ optionFilter: false });
   }
 
-
   componentDidMount() {
     axios.get('http://localhost:4000')
+
       .then(res => {
+
+
+
+        // {this.state.demographicData.data && Object.values(this.state.demographicData.data).map((demographicData, i) =>
+        //   <option key={i}>{demographicData.data}</option>
+        // );
+        // }
+
         this.setState({ demographicData: res.data});
-        // .catch(err => console.log(err));
         // console.log(res.data);
-      });
+
+      })
+      .catch(err => console.log(err));
   }
 
   render() {
+
+    // const select = this.state.demographicData.data && Object.keys(this.state.demographicData.data).map((demographicData, i) =>
+    //   <option key={i}>{demographicData.data}</option>
+
     console.log(this.state);
+
     return (
       <main>
         <section>
-          <div className="columns is-multiline">
-            {this.state.data.demographicData && this.state.data.demographicData.map(data =>
-              <h2 key={data.i}>{data.employee}</h2>
-            )}
+          <div className="control">
+            <h2>DEMOGRAPHIC OPTIONS:</h2>
+            <div className="select">
+              <select onChange={this.handleSelectOptionsFilter}>
+                <option value="">All</option>
+                <option value="education">education</option>
+                <option value="sex">sex</option>
+                <option value="citizenship">citizenship</option>
+              </select>
+            </div>
           </div>
+
+          <table className="table">
+
+          </table>
+
         </section>
       </main>
     );

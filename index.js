@@ -22,16 +22,30 @@ connection.connect(err => {
 
 app.get('/', (req, res) => {
   // res.send('hello from server');
-  connection.query('SELECT * FROM census_learn_sql', (err, results) => {
+  const queryString =
+  'SELECT * FROM census_learn_sql LIMIT 100';
+  connection.query(queryString, (err, rows) => {
     if(err) {
       return res.send(err);
-    } else {
-      return res.json({
-        data: results
-      });
     }
-  });
-});
+
+    console.log('successful');
+
+    const demoData = rows.map((row) => {
+      return row;
+    });
+
+    res.json({
+      data: demoData
+    });
+    // } else {
+    //   return res.json({
+    //     data: rows
+    //   });
+  }
+  );
+}
+);
 
 // connection.end();
 
