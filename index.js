@@ -1,12 +1,21 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
+const bodyParser = require('body-parser');
+
 const port = 4000;
-
-app.use(cors());
+//***********************************************************************************
 //cross origin resource sharing - this allow AJAX to access resource from remote host
+//***********************************************************************************
+app.use(cors());
 
+// const routes = require('./config/routes');
 
+app.use(express.static(`${__dirname}/public`));
+
+//******************************
+// create connection to database
+//******************************
 const mysql = require('mysql');
 const connection = mysql.createConnection({
   host: 'birdie-test.cyosireearno.eu-west-2.rds.amazonaws.com',
@@ -18,37 +27,45 @@ connection.connect(err => {
   if(err) {
     return err;
   }
+  console.log('connected to database');
 });
-
+//
+// // connection.end();
+//
+//
+//****************************
+// Query from the SQL DataBase
+//****************************
 app.get('/', (req, res) => {
   // res.send('hello from server');
-  const queryString =
-  'SELECT * FROM census_learn_sql LIMIT 100';
-  connection.query(queryString, (err, rows) => {
-    if(err) {
+  var column = req.query.column;
+  var query = `
+    select
+  	  \`${column}\` as 'value',
+  	  count(\`${column}\`) as 'count',
+  	  avg(age) as 'average_age'
+    from
+      census_learn_sql
+    group by
+      \`${column}\`
+    limit
+      100`;
+
+  connection.query(query, (err, rows) => {
+    //if(err) throw err
+    if (err) {
       return res.send(err);
+    } else {
+      return res.json(rows);
     }
+  });
+});
 
-    console.log('successful');
 
-    const demoData = rows.map((row) => {
-      return row;
-    });
+app.use(bodyParser.json());
 
-    res.json({
-      data: demoData
-    });
-    // } else {
-    //   return res.json({
-    //     data: rows
-    //   });
-  }
-  );
-}
-);
+// app.use('/api', routes);
 
-// connection.end();
-
-app.listen(port, () => console.log(`Express running on port ${port}`));
+app.listen(port, () => console.log(`listening to ${port}`));
 
 module.exports = app;
