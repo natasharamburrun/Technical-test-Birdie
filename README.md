@@ -1,6 +1,5 @@
 ## Technical test Birdie
 
-
 ### Key requirements:
 - SPA Small Single page application that visualizes database data
 - Application should allow to select a column (amongst demographic data), then display, for each different value in this column, number of lines with this value, and "age" value average.
@@ -12,11 +11,7 @@
 #### Technologies Used:
 HTML | SCSS | JavaScript (ES6) | React | Nodejs | mySQL | Webpack | Bulma | Sass
 
-hr>
-
-
-• If more than 100 different values, one can indicate number of non-displayed values.
-• Indicate number of non-displayed lines (i.e. lines corresponding to non-displayed values)
+<hr>
 
 #### Build:
 
@@ -33,13 +28,9 @@ hr>
 
 #### Challenges:
 
-- I experience a couple of Challenges, firstly the data takes a long time to load when change option to a different value in the drop down box, I decided to include a loading page to avoid the user to keep selecting whilst loading.
+- I experience a couple of Challenges, firstly it take a very long time for the data to load when change options in the drop down box, I decided to include a loading page to avoid the user to continue to select items while loading.
 - I did not complete the indication of number of non-displayed values ie lines.
 
 
 <strong>Single Page Application</strong>:
 <p align="center"><img src="src/assets/screenshot.png" "width=700"></p>
-
-
-##### Challenges
-- The time it take for the data to load due to the size
