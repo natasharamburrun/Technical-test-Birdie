@@ -38,8 +38,8 @@ connection.connect(err => {
 //****************************
 app.get('/', (req, res) => {
   // res.send('hello from server');
-  var column = req.query.column;
-  var query = `
+  const column = req.query.column;
+  const query = `
     select
   	  \`${column}\` as 'value',
   	  count(\`${column}\`) as 'count',
@@ -48,6 +48,9 @@ app.get('/', (req, res) => {
       census_learn_sql
     group by
       \`${column}\`
+    order by
+      \`${column}\`
+      desc
     limit
       100`;
 

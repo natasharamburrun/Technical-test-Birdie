@@ -1,14 +1,15 @@
 import React from 'react';
 
 export default class QueryDropdown extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
+      options: []
     };
   }
 
   onChange = (event) => {
-    this.props.onChange(event.target.value)
+    this.props.onChange(event.target.value);
   }
 
   render() {
