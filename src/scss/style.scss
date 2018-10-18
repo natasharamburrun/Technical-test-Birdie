@@ -1,3 +1,15 @@
 select {
   min-width: 500px;
 }
+
+
+/* dropdown basic */
+.control {
+  position: absolute;
+}
+
+/* dropdown optional styling */
+.control li:hover {
+  background-color: #eee;
+  cursor: pointer;
+}

@@ -27,7 +27,7 @@ front end
 
 Loading:
 
-  Add a loading property to the app state
+  <!-- Add a loading property to the app state -->
   <!-- Set loading / not loading in the get results method -->
   Disable the dropdown when loading
   Show a loading indicator in place of / or over the table when loading
