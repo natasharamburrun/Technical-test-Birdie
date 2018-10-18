@@ -15,21 +15,3 @@ front end
 
   pass loaded data into query result component
   build correct html for columns, etc
-
-Loading:
-
-  <!-- Add a loading property to the app state -->
-  <!-- Set loading / not loading in the get results method -->
-  Disable the dropdown when loading
-  Show a loading indicator in place of / or over the table when loading
-
-<!-- Data:
-
-  I think you may have issues with the first column, which we are now renaming “value”
-  You can keep it, or potentially pass in a new prop to the results called perhaps “column” and use that to pull out the right data: {{ row[this.props.column] }} vs {{ row.value }} -->
-
-If more than 100 different values, one can indicate number of non-displayed values.  
-•
-Indicate number of non-displayed lines (i.e. lines corresponding to non-displayed values)  
-
-add name of the option/value in table
