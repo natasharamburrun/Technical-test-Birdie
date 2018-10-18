@@ -11,13 +11,12 @@ export default class QueryDropdown extends React.Component {
   onChange = (event) => {
     this.props.onChange(event.target.value);
   }
-
   render() {
 
     return (
       <section className="section">
         <div className="control">
-          <div className="select">
+          <div className="select is-rounded">
             <select onChange={this.onChange}>
               {this.props.options && this.props.options.map(option => {
                 return ( <option key={option} value={option}>{option}</option> );

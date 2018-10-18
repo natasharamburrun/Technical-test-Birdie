@@ -43,6 +43,7 @@ app.get('/', (req, res) => {
     select
   	  \`${column}\` as 'value',
   	  count(\`${column}\`) as 'count',
+      count(\`${column}\`) as 'total_rows',
   	  avg(age) as 'average_age'
     from
       census_learn_sql

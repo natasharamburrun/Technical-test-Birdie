@@ -58,7 +58,7 @@ class App extends React.Component {
       <main>
         <section>
           <h1 className="title">DEMOGRAPHIC DATA</h1>
-          <p className="title">Please select a value on the dropdown to get information on that data</p>
+          <p className="title is-5">Please select a value on the dropdown to get information on that data:</p>
           <QueryDropdown options={options} onChange={this.onQueryChange}/>
           <QueryResults results={this.state.results}/>
         </section>

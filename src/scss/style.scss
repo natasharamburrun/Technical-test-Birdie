@@ -1,15 +1,36 @@
+* {
+  font-family: 'Montserrat', sans-serif;
+
+}
+
 select {
   min-width: 500px;
 }
 
-
-/* dropdown basic */
-.control {
-  position: absolute;
+td {
+  min-width: 400px;
 }
 
-/* dropdown optional styling */
-.control li:hover {
-  background-color: #eee;
-  cursor: pointer;
+
+th {
+  min-width: 400px;
+  font-weight: bolder;
+  background-color: #9ccccd;
+}
+
+.columns {
+  padding-left: 175px;
+}
+
+.title {
+  padding-left: 175px;
+  padding-top: 50px;
+}
+
+.p {
+  padding: 60px;
+}
+
+.select {
+  margin-left: 150px;
 }

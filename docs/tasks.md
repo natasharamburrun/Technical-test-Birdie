@@ -16,15 +16,6 @@ front end
   pass loaded data into query result component
   build correct html for columns, etc
 
-
-
-  Visual:
-
-  <!-- Make sure Bulma is in the page -->
-  Add the correct Bulma classes to the dropdown and (when you make it) table
-  Build the HTML for the table correctly (table > (optionally thead + tbody) > tr > td) (I suggest just copying from a Bulma example and modifying)
-  Add the map to the tr
-
 Loading:
 
   <!-- Add a loading property to the app state -->
@@ -40,3 +31,5 @@ Loading:
 If more than 100 different values, one can indicate number of non-displayed values.  
 •
 Indicate number of non-displayed lines (i.e. lines corresponding to non-displayed values)  
+
+add name of the option/value in table
