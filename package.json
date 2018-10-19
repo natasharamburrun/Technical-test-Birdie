@@ -5,8 +5,7 @@
   "scripts": {
     "start:client": "webpack-dev-server",
     "start:server": "nodemon",
-    "test:client": "nyc mocha test/client/**/*_spec.js --require test/client/helper --recursive --exit",
-    "test:server": "nyc mocha test/server/**/*_spec.js --require test/server/helper --recursive --exit",
+    "test": "nyc mocha \"test/**/*_spec.js\" --require \"test/spec_helper\" --recursive --exit",
     "build": "webpack -p",
     "start": "yarn build && node index"
   },

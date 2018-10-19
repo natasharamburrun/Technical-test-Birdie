@@ -17,12 +17,14 @@ export default class QueryDropdown extends React.Component {
       <section className="section">
         <h1 className="option-title">Select An Option:</h1>
         <div className="control">
-          <div className="select is-rounded">
-            <select onChange={this.onChange}>
-              {this.props.options && this.props.options.map(option => {
-                return ( <option key={option} value={option}>{option}</option> );
-              })}
-            </select>
+          <div className="dropdown is-active">
+            <div className="select is-rounded">
+              <select onChange={this.onChange}>
+                {this.props.options && this.props.options.map(option => {
+                  return ( <option key={option} value={option}>{option}</option> );
+                })}
+              </select>
+            </div>
           </div>
         </div>
       </section>
