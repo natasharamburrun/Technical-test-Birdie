@@ -55,8 +55,8 @@ app.get('/', (req, res) => {
   //   select
   //   count(*)
   //   where \`${column}\` <= 100 as 'number_rows';
-  // `;
 
+  // `;
 
   connection.query(query, (err, rows) => {
     if (err) {
@@ -66,6 +66,7 @@ app.get('/', (req, res) => {
     }
   });
 });
+app.get('/*', (req, res) => res.sendFile(`${__dirname}/public/index.html`));
 
 
 app.use(bodyParser.json());
