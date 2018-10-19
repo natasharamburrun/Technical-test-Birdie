@@ -1,6 +1,5 @@
 * {
   font-family: 'Montserrat', sans-serif;
-
 }
 
 select {
@@ -20,6 +19,7 @@ th {
 
 .columns {
   padding-left: 175px;
+  font-size: 15px;
 }
 
 .title {
@@ -33,4 +33,8 @@ th {
 
 .select {
   margin-left: 150px;
+}
+
+.sweet-loading {
+  margin-left: 200px;
 }

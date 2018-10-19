@@ -9,8 +9,6 @@ const port = 4000;
 //***********************************************************************************
 app.use(cors());
 
-// const routes = require('./config/routes');
-
 app.use(express.static(`${__dirname}/public`));
 
 //******************************
@@ -54,8 +52,14 @@ app.get('/', (req, res) => {
     limit
       100`;
 
+  // const query2 = `
+  //   select
+  //   count(*)
+  //   where \`${column}\` <= 100 as 'number_rows';
+  // `;
+
+
   connection.query(query, (err, rows) => {
-    //if(err) throw err
     if (err) {
       return res.send(err);
     } else {
@@ -66,8 +70,6 @@ app.get('/', (req, res) => {
 
 
 app.use(bodyParser.json());
-
-// app.use('/api', routes);
 
 app.listen(port, () => console.log(`listening to ${port}`));
 

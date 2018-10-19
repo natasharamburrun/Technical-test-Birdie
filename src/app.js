@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
+import { MoonLoader } from 'react-spinners';
 
 import './scss/style.scss';
 import 'bulma';
@@ -31,7 +32,6 @@ class App extends React.Component {
         results: res.data,
         isLoading: false
       }));
-    console.log(this.state);
 
   }
 
@@ -87,16 +87,19 @@ class App extends React.Component {
       'salary range'
     ];
 
-    if (this.state.isLoading) {
-      return <p> Please wait while data is Loading ...</p>;
-    }
-
-    console.log(this.state.isLoading);
     return (
       <main>
         <section>
           <h1 className="title">DEMOGRAPHIC DATA</h1>
           <p className="title is-5">Please select a value on the dropdown to get information on that data:</p>
+          <div className='sweet-loading'>
+            <MoonLoader
+              color={'#9ccccd'}
+              loading={this.state.isLoading}
+              height={60}
+              width={60}
+            />
+          </div>
           <QueryDropdown options={options} onChange={this.onQueryChange}/>
           <QueryResults results={this.state.results}/>
         </section>
