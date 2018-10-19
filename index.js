@@ -27,10 +27,9 @@ connection.connect(err => {
   }
   console.log('connected to database');
 });
-//
+
 // // connection.end();
-//
-//
+
 //****************************
 // Query from the SQL DataBase
 //****************************
