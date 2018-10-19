@@ -15,6 +15,7 @@ export default class QueryDropdown extends React.Component {
 
     return (
       <section className="section">
+        <h1 className="option-title">Select An Option:</h1>
         <div className="control">
           <div className="select is-rounded">
             <select onChange={this.onChange}>

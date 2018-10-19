@@ -43,7 +43,7 @@ class App extends React.Component {
 
 
     const options = [
-      'Select an option:',
+      '',
       'age',
       'class of worker',
       'occupation code',
