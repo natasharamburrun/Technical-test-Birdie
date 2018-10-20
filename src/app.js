@@ -22,7 +22,7 @@ class App extends React.Component {
   getResults = (column) => {
     this.setState({ isLoading: true });
     axios({
-      url: ('http://localhost:4000'),
+      url: 'http://localhost:4000/',
       method: 'GET',
       params: {
         column
@@ -40,6 +40,7 @@ class App extends React.Component {
   }
 
   render() {
+    console.log(this.state);
 
 
     const options = [

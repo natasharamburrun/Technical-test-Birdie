@@ -3,36 +3,16 @@ const cors = require('cors');
 const app = express();
 const bodyParser = require('body-parser');
 
-const port= process.env.PORT || 4000;
-//***********************************************************************************
-//cross origin resource sharing - this allow AJAX to access resource from remote host
-//***********************************************************************************
+const { port, connection } = require('./config/environment');
+
+
 app.use(cors());
 
 app.use(express.static(`${__dirname}/public`));
 
-//******************************
-// create connection to database
-//******************************
-const mysql = require('mysql');
-const connection = mysql.createConnection({
-  host: 'birdie-test.cyosireearno.eu-west-2.rds.amazonaws.com',
-  user: 'test-read',
-  password: 'xnxPp6QfZbCYkY8',
-  database: 'birdietest'
-});
-connection.connect(err => {
-  if(err) {
-    return err;
-  }
-  console.log('connected to database');
-});
-
-// // connection.end();
-
-//****************************
+// ****************************
 // Query from the SQL DataBase
-//****************************
+// ****************************
 app.get('/', (req, res) => {
   // res.send('hello from server');
   const column = req.query.column;
@@ -60,7 +40,8 @@ app.get('/', (req, res) => {
     }
   });
 });
-app.get('/*', (req, res) => res.sendFile(`${__dirname}/public/index.html`));
+
+app.get('/*', (req, res) => res.sendFile(`${__dirname}/src/index.html`));
 
 
 app.use(bodyParser.json());
