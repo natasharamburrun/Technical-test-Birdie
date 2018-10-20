@@ -51,12 +51,6 @@ app.get('/', (req, res) => {
     limit
       100`;
 
-  // const query2 = `
-  //   select
-  //   count(*)
-  //   where \`${column}\` <= 100 as 'number_rows';
-
-  // `;
 
   connection.query(query, (err, rows) => {
     if (err) {
