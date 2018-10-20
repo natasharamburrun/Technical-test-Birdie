@@ -28,8 +28,9 @@ HTML | SCSS | JavaScript (ES6) | React | Nodejs | mySQL | Webpack | Bulma | Sass
 
 #### Challenges:
 
-- I experience a couple of challenges, firstly it takes a long time for the data to load when change options in the drop down box, I decided to include a loading function to let the user know that the page is loading. It would have been good to disable the dropdown when loading is happening, so the user can not select a new option.
-- I did not complete the indication of number of non-displayed values ie lines, although I attempted this as a new SQL query.
+- I experience a couple of challenges, firstly it takes a long time for the data to load when change options in the drop down box, I have include a loading function to let the user know that the page is loading.
+- Get the name of the column to show up on the page. The code currently looks for a property named value.
+- I was unable to complete the indication of number of non-displayed values ie lines, I attempted this as a new SQL query although found this challenging.
 
 
 <strong>Single Page Application</strong>:
