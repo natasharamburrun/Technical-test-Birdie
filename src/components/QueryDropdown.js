@@ -11,6 +11,8 @@ export default class QueryDropdown extends React.Component {
   onChange = (event) => {
     this.props.onChange(event.target.value);
   }
+
+
   render() {
 
     return (

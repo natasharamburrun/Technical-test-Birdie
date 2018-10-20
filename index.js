@@ -5,7 +5,6 @@ const bodyParser = require('body-parser');
 
 const { port, connection } = require('./config/environment');
 
-
 app.use(cors());
 
 app.use(express.static(`${__dirname}/public`));

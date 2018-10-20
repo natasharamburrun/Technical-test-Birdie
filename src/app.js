@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-import { MoonLoader } from 'react-spinners';
+import { ClipLoader } from 'react-spinners';
 
 import './scss/style.scss';
 import 'bulma';
@@ -20,7 +20,7 @@ class App extends React.Component {
   }
 
   getResults = (column) => {
-    this.setState({ isLoading: true });
+    this.setState({ isLoading: true});
     axios({
       url: 'http://localhost:4000/',
       method: 'GET',
@@ -32,7 +32,6 @@ class App extends React.Component {
         results: res.data,
         isLoading: false
       }));
-
   }
 
   onQueryChange = (option) => {
@@ -40,8 +39,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state);
-
 
     const options = [
       '',
@@ -88,21 +85,23 @@ class App extends React.Component {
       'salary range'
     ];
 
+
+
     return (
       <main>
         <section>
           <h1 className="title">DEMOGRAPHIC DATA</h1>
           <p className="title is-5">Please select a value on the dropdown to get information on that data:</p>
           <div className='sweet-loading'>
-            <MoonLoader
+            <ClipLoader
               color={'#9ccccd'}
               loading={this.state.isLoading}
               height={60}
               width={60}
             />
           </div>
-          <QueryDropdown options={options} onChange={this.onQueryChange}/>
-          <QueryResults results={this.state.results}/>
+          {(!this.state.isLoading && <QueryDropdown options={options} onChange={this.onQueryChange} /> )}
+          {(!this.state.isLoading && <QueryResults results={this.state.results}/>)}
         </section>
       </main>
     );
