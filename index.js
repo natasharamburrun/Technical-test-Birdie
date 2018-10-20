@@ -30,8 +30,6 @@ app.get('/', (req, res) => {
       desc
     limit
       100`;
-
-
   connection.query(query, (err, rows) => {
     if (err) {
       return res.send(err);
