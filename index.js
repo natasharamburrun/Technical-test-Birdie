@@ -3,7 +3,7 @@ const cors = require('cors');
 const app = express();
 const bodyParser = require('body-parser');
 
-const port = 4000;
+const port= process.env.PORT || 4000;
 //***********************************************************************************
 //cross origin resource sharing - this allow AJAX to access resource from remote host
 //***********************************************************************************
