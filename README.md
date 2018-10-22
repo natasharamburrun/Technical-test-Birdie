@@ -1,10 +1,10 @@
 ## Technical test Birdie
 
 ### Key requirements:
-- SPA Small Single page application that visualizes database data
-- Application should allow to select a column (amongst demographic data), then display, for each different value in this column, number of lines with this value, and "age" value average.
+- SPA Small Single page application that visualises database data
+- An application should allow selecting a column (amongst demographic data), then display, for each different value in this column, number of lines with this value, and "age" value average
 - Values must be sorted by decreasing order
-- One can display only 100 first values.
+- One can display only 100 first values
 
 <hr>
 
@@ -16,9 +16,9 @@ HTML | SCSS | JavaScript (ES6) | React | Nodejs | mySQL | Webpack | Bulma | Sass
 #### Build:
 
 - Built an application where the user can select an option on a dropdown box which triggers an onChange handler
-- Set up backend to obtain data from mySQL database
-- Request that the getResult method sends a AXIOS GET request calling the API
-- Set up frontend using React requesting RES.JSON response and setState
+- Set up the backend to obtain data from the MySQL database
+- Request that the getResult method sends an AXIOS GET request calling the API
+- Set up frontend using React requesting res.JSON response and setState
 - Update UI rendering query results
 
 
@@ -28,9 +28,9 @@ HTML | SCSS | JavaScript (ES6) | React | Nodejs | mySQL | Webpack | Bulma | Sass
 
 #### Challenges:
 
-- I experience a couple of challenges, firstly it takes a long time for the data to load when change options in the drop down box, I have include a loading function to let the user know that the page is loading.
-- Get the name of the column to show up on the page. The code currently looks for a property named value.
-- I was unable to complete the indication of number of non-displayed values ie lines, I attempted this as a new SQL query although found this challenging.
+- I experience a couple of challenges, firstly it takes a long time for the data to load when change options in the drop-down box, I have included a loading function to let the user know that the page is loading
+- Get the name of the column to show up on the page. The code currently looks for a property named value
+- I was unable to complete the indication of a number of non-displayed values, ie lines, I attempted this as a new SQL query although found this challenging
 
 
 <strong>Single Page Application</strong>:

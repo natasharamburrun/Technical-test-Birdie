@@ -9,6 +9,10 @@ app.use(cors());
 
 app.use(express.static(`${__dirname}/public`));
 
+app.use(bodyParser.json());
+
+app.get('/*', (req, res) => res.sendFile(`${__dirname}/src/index.html`));
+
 // ****************************
 // Query from the SQL DataBase
 // ****************************
@@ -37,11 +41,6 @@ app.get('/', (req, res) => {
     }
   });
 });
-
-app.get('/*', (req, res) => res.sendFile(`${__dirname}/src/index.html`));
-
-
-app.use(bodyParser.json());
 
 app.listen(port, () => console.log(`listening to ${port}`));
 
