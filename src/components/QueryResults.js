@@ -9,6 +9,7 @@ export default class QueryResults extends React.Component {
   }
 
   render() {
+    // console.log(this.state);
     return (
       <div className='filteredItems'>
         <div className="columns">

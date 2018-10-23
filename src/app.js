@@ -32,6 +32,7 @@ class App extends React.Component {
         results: res.data,
         isLoading: false
       }));
+    console.log(this.state);
   }
 
   onQueryChange = (option) => {

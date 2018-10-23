@@ -1,17 +1,15 @@
 const express = require('express');
 const cors = require('cors');
-const app = express();
 const bodyParser = require('body-parser');
 
-const { port, connection } = require('./config/environment');
+const app = express();
+const { port , connection } = require('./config/environment');
+
+app.use(bodyParser.json());
 
 app.use(cors());
 
 app.use(express.static(`${__dirname}/public`));
-
-app.use(bodyParser.json());
-
-app.get('/*', (req, res) => res.sendFile(`${__dirname}/src/index.html`));
 
 // ****************************
 // Query from the SQL DataBase
@@ -19,7 +17,8 @@ app.get('/*', (req, res) => res.sendFile(`${__dirname}/src/index.html`));
 app.get('/', (req, res) => {
   // res.send('hello from server');
   const column = req.query.column;
-  const query = `
+  const query =
+  `
     select
   	  \`${column}\` as 'value',
   	  count(\`${column}\`) as 'count',
@@ -34,6 +33,7 @@ app.get('/', (req, res) => {
     limit
       100`;
   connection.query(query, (err, rows) => {
+    console.log('data successful');
     if (err) {
       return res.send(err);
     } else {
@@ -41,6 +41,7 @@ app.get('/', (req, res) => {
     }
   });
 });
+app.get('/*', (req, res) => res.sendFile(`${__dirname}/public/index.html`));
 
 app.listen(port, () => console.log(`listening to ${port}`));
 
